@@ -13,7 +13,11 @@
                 .then(response => response.text())
                 .then(data => {
                     const imgElement = document.getElementById('image');
-                    imgElement.src = data; // directly assign the base64 string to src
+                    if(base64String.includes("data:image")) {
+                        imgElement.src = data; // directly assign the base64 string to rc
+                    } else {
+                        imgElement.src = 'data:image/png;base64,' + data;
+                    }
                 })
                 .catch(error => console.error('Error:', error));
         }
