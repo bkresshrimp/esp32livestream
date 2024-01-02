@@ -9,11 +9,11 @@
     <script>
         function fetchImage(){
             // Replace 'clientid' with the actual client ID
-            fetch('http://sanslab.viewdns.net:5005/api/image/khoemach')
+            fetch('http://localhost:5005/api/image/khoemach')
                 .then(response => response.text())
                 .then(data => {
                     const imgElement = document.getElementById('image');
-                    imgElement.src = 'data:image/png;base64,' + data;
+                    imgElement.src = data; // directly assign the base64 string to src
                 })
                 .catch(error => console.error('Error:', error));
         }
