@@ -9,7 +9,7 @@
     <script>
         function fetchImage(){
             // Replace 'clientid' with the actual client ID
-            fetch('http://localhost:5005/api/image/khoemach')
+            fetch('http://sanslab.viewdns.net:5005/api/image/khoemach')
                 .then(response => response.text())
                 .then(data => {
                     const imgElement = document.getElementById('image');
